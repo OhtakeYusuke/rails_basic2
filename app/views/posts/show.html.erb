@@ -1,0 +1,18 @@
+<% breadcrumb :post_show, @post %>
+
+<h1>投稿詳細</h1>
+<div>
+  <%= @post.name %>
+</div>
+<div>
+  <%= @post.description %>
+</div>
+<div>
+  <%= @post.created_at %>
+</div>
+<div>
+    <%= link_to '編集', "/posts/edit/#{@post.id}" %>
+</div>
+<div>
+    <%= link_to '削除', "/posts/#{@post.id}", method: :delete, data: {confirm: "#{@post.name}を削除してよろしいですか？"} %>
+</div>
