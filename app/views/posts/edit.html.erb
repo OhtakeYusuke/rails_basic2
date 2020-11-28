@@ -1,17 +1,3 @@
 <% breadcrumb :post_edit, @post %>
 <h1>編集</h1>
-<%= form_with model: @post, url: "/posts/#{@post.id}", local: true do |f| %>
-<div>
-  <%= f.label :name %>
-</div>
-<div>
-  <%= f.text_field :name, placeholder: "名前を入力" %>
-</div>
-<div>
-  <%= f.label :description %>
-</div>
-<div>
-  <%= f.text_field :description, placeholder: "詳細を入寮" %>
-</div>
-<%= f.submit nil %>
-<% end %>
+<%= render partial: 'form', locals: {post: @post} %>

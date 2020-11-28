@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to "/", notice: "投稿を完了しました"
+      redirect_to root_url, notice: "投稿を完了しました"
     else
       flash[:notice] = "入力内容が間違っています"
       render :new
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to "/", notice: "投稿を編集しました"
+      redirect_to root_url, notice: "投稿を編集しました"
     else
       flash[:notice] = "入力が違います"
       render :edit
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to "/", notice: "投稿を削除しました"
+    redirect_to root_url, notice: "投稿を削除しました"
   end
 
   private

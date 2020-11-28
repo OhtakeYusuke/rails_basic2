@@ -11,8 +11,8 @@
   <%= @post.created_at %>
 </div>
 <div>
-    <%= link_to '編集', "/posts/edit/#{@post.id}" %>
+    <%= link_to '編集', edit_post_path %>
 </div>
 <div>
-    <%= link_to '削除', "/posts/#{@post.id}", method: :delete, data: {confirm: "#{@post.name}を削除してよろしいですか？"} %>
+    <%= link_to '削除', post_path, method: :delete, data: {confirm: "#{@post.name}を削除してよろしいですか？"} %>
 </div>
